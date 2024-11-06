@@ -1,0 +1,7 @@
+{
+    "host":"localhost",
+    "port":4040,
+    "static":"./html",
+    "templates":"./templates",
+    "download":"C:/Temp"
+}

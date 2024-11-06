@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>$title</title>
+ <!-- BootstrapのCSS読み込み -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link rel="stylesheet" href="style.css" />
+ <script>
+ </script>
+</head>
+
+<body>
+ <!-- ヘッダー -->
+ <header class="container">
+  <h1 class="text-center p-5 border border-warning rounded">$title</h1>
+  <p class="text-center"><a href="/">HOME</a></p>
+ </header>
+
+ <!-- 本文 -->
+ <article class="container">
+   <section class="row mt-5">
+    <p class="text-center message">$message</p>
+    <form class="form" method="POST" action="/post_copy">
+      <div class="form_row"><label class="form-label">Source Bucket<input type="text" name="s_bucket" class="form-control" size="50" value="$s_bucket" /></label></div>
+      <div class="form_row"><label class="form-label">Source Key<input type="text" name="s_key" class="form-control" size="100" value="$s_key" /></label></div>
+      <div class="form_row"><label class="form-label">Destination Bucket<input type="text" name="d_bucket" class="form-control" size="50" value="$d_bucket" /></label></div>
+      <div class="form_row"><label class="form-label">Destination Key<input type="text" name="d_key" class="form-control" size="100" value="$d_key" /></label></div>
+      <div class="form_row2"><button type="submit" class="btn btn-primary">Copy</button>
+    </form>
+   </section>
+</article>
+
+<!-- フッター -->
+<footer class="container">
+ <p class="text-center mt-4"><a href="#top">TOP</a></p>
+ <p>&nbsp;</p>
+</footer>
+<!-- BootstrapのJS読み込み -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

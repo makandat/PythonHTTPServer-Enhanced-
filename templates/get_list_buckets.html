@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+ <meta charset="utf-8" />
+ <meta name="viewport" content="width=device-width,initial-scale=1" />
+ <title>$title</title>
+ <!-- BootstrapのCSS読み込み -->
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="style.css" rel="stylesheet">
+ <script>
+ </script>
+</head>
+
+<body>
+ <!-- ヘッダー -->
+ <header class="container">
+  <h1 class="text-center p-5 border border-primary rounded">$title</h1>
+  <p class="text-center"><a href="/">HOME</a> / <a href="/get_upload" target="_blank">Upload</a> / <a href="/get_copy" target="_blank">Copy</a> / <a href="/get_delete" target="_blank">Delete</a> / <a href="/get_prefix_new" target="_blank">Prefix New</a> / <a href="/get_bucket_new">Bucket New</a></p>
+ </header>
+
+ <!-- 本文 -->
+ <article class="container">
+   <section class="row mt-5">
+    <table class="table table-striped">
+      <tr scope="col"><th>Name</th><th>CreationDate</th></tr>
+    #for $item in $buckets
+      <tr><td><a href="/get_list_items?path=$item['Name']" target="_blank">$item["Name"]</a></td><td>$item["CreationDate"]</td></tr>
+    #end for
+    </table>
+    <p class="text-center message">$message</p>
+   </section>
+ </article>
+ 
+ <!-- フッター -->
+ <footer class="container">
+  <p class="text-center mt-4"><a href="#top">TOP</a></p>
+  <p>&nbsp;</p>
+ </footer>
+ <!-- BootstrapのJS読み込み -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
