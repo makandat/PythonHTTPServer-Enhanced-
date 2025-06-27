@@ -1,4 +1,4 @@
-# response.py v1.2.0
+# response.py v1.2.1
 from http.server import *
 import os
 import json
@@ -65,9 +65,12 @@ class Response:
   def render(self, path, embed=None):
     res = self.base
     template = ""
-    with open(path, "rt", encoding="utf-8") as f:
-      template = f.read()
-    html = str(Template(template, searchList=[embed]))
+    if os.path.isfile(path):
+      with open(path, "rt", encoding="utf-8") as f:
+        template = f.read()
+      html = str(Template(template, searchList=[embed]))
+    else:
+      html = path  # パスでなく HTML そのものの場合
     self.sendText(html, mime="text/html")
     return
   
